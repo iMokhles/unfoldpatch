@@ -9,7 +9,7 @@
         NSString *talta = @"Substrate";
         NSString *rab3a = @"Dynamic";
         NSString *khmsa = @"Libraries";
-        NSString *seta = @"Unfold"; 
+        NSString *seta = @"Unflod"; 
         NSString *sb3a = @".dylib";
         
         NSString *hagaGood = [NSString stringWithFormat:@"/%@/%@%@/%@%@/%@%@", ola, tanya, talta, rab3a, khmsa, seta, sb3a];
