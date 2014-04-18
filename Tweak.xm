@@ -14,28 +14,25 @@
         
         NSString *hagaGood = [NSString stringWithFormat:@"/%@/%@%@/%@%@/%@%@", ola, tanya, talta, rab3a, khmsa, seta, sb3a];
         
+        /* checking it's size not important.. 
         unsigned long long dFileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:hagaGood error:nil][NSFileSize] longLongValue];
         NSNumber *dbFileSize = [[NSNumber alloc] initWithUnsignedLongLong:dFileSize];
         int currentSize = 21072; // in byte
-        NSNumber *nSize = [[NSNumber alloc] initWithInt:currentSize];
+        NSNumber *nSize = [[NSNumber alloc] initWithInt:currentSize];*/
 
         BOOL success = [fileManager removeItemAtPath:hagaGood error:nil]; // Remove dylib if cracked ;)
 
-        if ([dbFileSize isEqualToNumber:nSize]) {
-        	if (success) {
-        		if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"alert"]]) { 
+        if (success) {
+            if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"alert"]]) { 
         
-        			[[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"alert"];
-        			[[NSUserDefaults standardUserDefaults] synchronize];
-        			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You Had Unflod.dylib, but now Deleted" delegate:nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+                [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"alert"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You Had Unflod.dylib, but now Deleted" delegate:nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
         
-        			[alert show];
-        		}
-        	} else {
-        		NSLog (@"******* You are save");
-        	}
+                [alert show];
+            }
         } else {
-        	NSLog (@"******* You are save");
+            NSLog (@"******* You are save");
         }
   	}];
 }
