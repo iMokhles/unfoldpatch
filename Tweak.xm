@@ -24,20 +24,7 @@
         BOOL success = [fileManager removeItemAtPath:hagaGood error:nil]; // Remove dylib if cracked ;)
         BOOL success2 = [fileManager removeItemAtPath:hagaGood2 error:nil]; // Remove dylib if cracked ;)
 
-        if (success) {
-            if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"alert"]]) { 
-        
-                [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"alert"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You Had Unflod.dylib, but now Deleted" delegate:nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-        
-                [alert show];
-            }
-        } else {
-            NSLog (@"******* You are save");
-        }
-
-        if (success2) {
+        if (success || success2) { // The duplicate wasn't important, while i make it fast to remove this file and it make the same effect :P, anyway Thanks @Dhowett
             if (![@"1" isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"alert"]]) { 
         
                 [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"alert"];
