@@ -27,7 +27,7 @@
         
         			[[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"alert"];
         			[[NSUserDefaults standardUserDefaults] synchronize];
-        			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You Had Unfold.dylib, but now Deleted" delegate:nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+        			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You Had Unflod.dylib, but now Deleted" delegate:nil cancelButtonTitle: @"Ok" otherButtonTitles: nil];
         
         			[alert show];
         		}
