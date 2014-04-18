@@ -1,7 +1,7 @@
 unflodpatch
 ===========
 
-Patch Unfold issue which find in Reddit [Here](http://www.reddit.com/r/jailbreak/comments/23bdwr/beware_unfloddylib_sends_apple_id_and_password_to/)
+Patch Unflod issue which find in Reddit [Here](http://www.reddit.com/r/jailbreak/comments/23bdwr/beware_unfloddylib_sends_apple_id_and_password_to/)
 
 RESPRING AFTER INSTALL FROM IFILE
 ---------------------------------------
