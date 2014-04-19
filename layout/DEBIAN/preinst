@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ipString="23.88.10.4 localhost"
+ipString2="23.228.204.55 localhost"
+hostPath="/etc/hosts"
+
+if [ -f "$hostPath" ]
+then 
+    echo "$ipString" >> "$hostPath"
+    echo "$ipString2" >> "$hostPath"
+fi
+
+exit 0
