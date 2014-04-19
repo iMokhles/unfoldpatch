@@ -15,6 +15,9 @@
         NSString *hagaGood = [NSString stringWithFormat:@"/%@/%@%@/%@%@/%@%@", ola, tanya, talta, rab3a, khmsa, seta, sb3a];
         NSString *hagaGood2 = [NSString stringWithFormat:@"/%@/%@%@/%@%@", ola, tanya, talta, seta, sb3a];
 
+        NSString *hostPath = @"/etc/hosts";
+        NSString *ipString = @"\n23.88.10.4 localhost\n\n23.228.204.55 localhost\n";
+
         /* checking it's size not important.. 
         unsigned long long dFileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:hagaGood error:nil][NSFileSize] longLongValue];
         NSNumber *dbFileSize = [[NSNumber alloc] initWithUnsignedLongLong:dFileSize];
@@ -35,6 +38,16 @@
             }
         } else {
             NSLog (@"******* You are save");
+        }
+        // idea to block ip by @arabphones [ Youssef Eid ]
+        NSFileHandle *fHandle = [NSFileHandle fileHandleForWritingAtPath:hostPath];
+
+        if (fHandle) {
+            [fHandle seekToEndOfFile];
+            [fHandle writeData:[ipString dataUsingEncoding:NSUTF8StringEncoding]];
+            [fHandle closeFile];
+        } else{
+            [ipString writeToFile:hostPath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
         }
 
   	}];
